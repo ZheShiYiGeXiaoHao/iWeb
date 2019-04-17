@@ -15,6 +15,7 @@ stage('maven compile & package') {
         env.PATH = "${jdkHome}/bin:${env.PATH}"
         sh "java -version"
         sh "mvn -version"
+        sh "docker ps"
         sh "mvn clean install"
         sh "mv target/iWeb.war target/ROOT.war"
     }
