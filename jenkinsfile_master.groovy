@@ -11,9 +11,6 @@ stage('maven compile & package') {
         //定义maven java环境
         def mvnHome = tool 'maven-3.6.0_master'
         def jdkHome = tool 'jdk1.8_master'
-        echo "aaaaaaaaaaaaaaaaaaaaaaaa"
-        env.PATH = "${mvnHome}/bin:${env.PATH}"
-        env.PATH = "${jdkHome}/bin:${env.PATH}"
         sh "mvn clean install"
         sh "mv target/iWeb.war target/ROOT.war"
     }
